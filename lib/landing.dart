@@ -1,5 +1,6 @@
 import 'package:corona_hack/myHelp.dart';
 import 'package:corona_hack/myInfo.dart';
+import 'package:corona_hack/myStats.dart';
 import 'package:flutter/material.dart';
 
 class LandingScreen extends StatefulWidget {
@@ -11,7 +12,7 @@ class _LandingScreenState extends State<LandingScreen> {
  int _currentIndex= 0;
   //static const TextStyle optionStyle =  TextStyle(fontSize: 16);
   final tabs = [
-    PatientStatScreen(),
+    MyStats(),
         MyInfo(),
         NewsScreen(),
         MyHelp()
