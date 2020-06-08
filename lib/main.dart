@@ -1,6 +1,4 @@
-// import 'package:corona_hack/help_line.dart';
 import 'package:corona_hack/help_line.dart';
-import 'package:corona_hack/statics.dart';
 import 'package:flutter/material.dart';
 
 void main() {
