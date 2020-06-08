@@ -1,15 +1,3 @@
-@baseUrl = api.covid19india.org/raw_data4.json
-
-@Authorization: test
-api.covid19india.org/raw_data4.json
-
-######
-
-GET healthcheckzen.in:8192/submit?t=O9ST8
-Accept: application/json
-
-####
-
 GET https://api.covid19india.org/states_daily.json
 Accept: application/json
 

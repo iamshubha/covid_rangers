@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:url_launcher/url_launcher.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -68,30 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           
                           ),
                     ),
-                    // child: Card(
-                    //   elevation: 10,
-                    //   color: Colors.grey,
-                    //   child: Column(
-                    //     children: [
-                    //       Text(
-                    //         data[index]['loc'],
-                    //         style:
-                    //             TextStyle(fontSize: 20.0, color: Colors.black),
-                    //       ),
-                    //       Divider(
-                    //         height: 20,
-                    //       ),
-                    //       Text(
-                    //         data[index]['number'],
-                    //         style: TextStyle(
-                    //           fontSize: 20.0,
-                    //           color: Colors.black,
-                    //         ),
-                    //       ),
-                    //       Icon(Icons.call)
-                    //     ],
-                    //   ),
-                    // ),
                   );
                 },
               )
