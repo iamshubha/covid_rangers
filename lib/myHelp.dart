@@ -58,21 +58,25 @@ class _MyHelpState extends State<MyHelp> {
                 Card(
                   margin: EdgeInsets.all(5),
                   child: ListTile(
-                    leading: Icon(
-                      Icons.more_vert,
-                      size: 30,
-                    ),
-                    title: Text(
-                      "More helplines",
-                      style: TextStyle(
-//            fontWeight: FontWeight.w600,
-                        fontSize: 16,
-                        fontFamily: 'Product Sans',
+                      leading: Icon(
+                        Icons.more_vert,
+                        size: 30,
                       ),
-                    ),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: () => Navigator.pushNamed(context, '/MoreHelplines'),
-                  ),
+                      title: Text(
+                        "More helplines",
+                        style: TextStyle(
+//            fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          fontFamily: 'Product Sans',
+                        ),
+                      ),
+                      trailing: Icon(Icons.arrow_forward_ios),
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MoreHelplines()))
+                      // Navigator.pushNamed(context, '/MoreHelplines'),
+                      ),
                 ),
                 Padding(padding: EdgeInsets.all(5)),
                 Card(
@@ -111,8 +115,7 @@ class _MyHelpState extends State<MyHelp> {
                       children: [
                         TextSpan(text: "Designed and Developed by\t"),
                         TextSpan(
-                          text:
-                              "\nShubha Banerjee & Shoili Chowdhury",
+                          text: "\nShubha Banerjee & Shoili Chowdhury",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
@@ -307,7 +310,7 @@ class _MoreHelplinesState extends State<MoreHelplines> {
   @override
   Widget build(BuildContext context) {
     if (data == null) {
-      return Splashscreen();//MyLoadingScreen();
+      return Splashscreen(); //MyLoadingScreen();
     }
     return Scaffold(
       body: Stack(
