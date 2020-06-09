@@ -5,6 +5,8 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
+import 'loading_screen.dart';
+
 class MyStats extends StatefulWidget {
   @override
   _MyStatsState createState() => _MyStatsState();
@@ -513,30 +515,3 @@ class _MyStatsScaffoldState extends State<MyStatsScaffold> {
   }
 }
 
-class MyLoadingScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
-              ),
-              Text(
-                "\nLoading...",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}

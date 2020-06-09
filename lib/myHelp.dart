@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'loading_screen.dart';
+
 class MyHelp extends StatefulWidget {
   @override
   _MyHelpState createState() => _MyHelpState();
@@ -312,7 +314,7 @@ class _MoreHelplinesState extends State<MoreHelplines> {
   @override
   Widget build(BuildContext context) {
     if (data == null) {
-      return Splashscreen(); //MyLoadingScreen();
+      return MyLoadingScreen(); //MyLoadingScreen();
     }
     return SafeArea(
           child: Scaffold(

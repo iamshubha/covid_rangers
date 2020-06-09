@@ -41,13 +41,21 @@ class _SplashscreenState extends State<Splashscreen> with TickerProviderStateMix
           color: Colors.white,
           child: FadeTransition(
               opacity: animation,
-              child: Center(
-                child: Text("Covid Rangers",
-                style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 30
-                ),
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset("assets/image1.png", height: 200,),
+                  Center(
+                    child: Text("Covidpedia",
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w800
+                    ),
+                    ),
+                  ),
+                ],
               )
           )
       ),
