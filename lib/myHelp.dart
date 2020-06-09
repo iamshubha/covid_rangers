@@ -314,50 +314,49 @@ class _MoreHelplinesState extends State<MoreHelplines> {
     if (data == null) {
       return Splashscreen(); //MyLoadingScreen();
     }
-    return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Container(
-            color: Colors.blueAccent,
-          ),
-          SafeArea(
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: FlatButton(
-                    onPressed: () => Navigator.pop(context),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.white,
+    return SafeArea(
+          child: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+          color: Colors.grey[300], borderRadius: BorderRadius.circular(20)),
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: FlatButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "Go Back",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w800,
                         ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          "Go Back",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'Product Sans',
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: data == null
-                        ? 0
-                        : data['data']['contacts']['regional'].length,
-                    itemBuilder: (BuildContext context, i) {
-                      //print(data['data']['contacts']['regional'][i].length);
-                      return Card(
+              ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: data == null
+                      ? 0
+                      : data['data']['contacts']['regional'].length,
+                  itemBuilder: (BuildContext context, i) {
+                    //print(data['data']['contacts']['regional'][i].length);
+                    return Padding(
+                      padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                      child: Card(
                         margin:
                             EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                         child: ListTile(
@@ -369,7 +368,7 @@ class _MoreHelplinesState extends State<MoreHelplines> {
                           title: Text(
                             "${data['data']['contacts']['regional'][i]['loc'].toString()}",
                             style: TextStyle(
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w800,
                               fontSize: 16,
                             ),
                           ),
@@ -390,14 +389,14 @@ class _MoreHelplinesState extends State<MoreHelplines> {
                             }
                           },
                         ),
-                      );
-                    },
-                  ),
-                )
-              ],
-            ),
+                      ),
+                    );
+                  },
+                ),
+              )
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
