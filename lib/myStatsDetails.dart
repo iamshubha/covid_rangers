@@ -40,7 +40,7 @@ class _MyDetailState extends State<MyDetail> {
         body: Stack(
           children: <Widget>[
             Container(
-              color: Colors.blueAccent,
+              color: Colors.grey,
             ),
             Center(
               child: Column(

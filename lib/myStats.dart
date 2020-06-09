@@ -33,14 +33,13 @@ class _MyStatsState extends State<MyStats> {
     if (data == null) {
       return MyLoadingScreen();
     }
-    return Stack(
-      children: <Widget>[
-        Container(
-          color: Colors.blueAccent,
-        ),
-        SafeArea(
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+              color: Colors.grey[300], borderRadius: BorderRadius.circular(20)),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(5, 20, 5, 18),
+            padding: const EdgeInsets.fromLTRB(5, 0, 5, 10),
             child: ListView(
               children: <Widget>[
                 //Add list here
@@ -51,19 +50,17 @@ class _MyStatsState extends State<MyStats> {
                     title: Text(
                       "COVID-19",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 40,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Product Sans',
+                        fontWeight: FontWeight.w800,
                       ),
                     ),
                     subtitle: Text(
                       "Statistics in India",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 30,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Product Sans',
+                        fontWeight: FontWeight.w800,
                       ),
                     ),
                     trailing: IconButton(
@@ -72,9 +69,9 @@ class _MyStatsState extends State<MyStats> {
                         size: 35,
                         color: Colors.white,
                       ),
-                      onPressed: () => 
-                      // Navigator.push(context, MaterialPageRoute(builder: (context)=>MyDetail))
-                      Navigator.pushNamed(context, '/detail'),
+                      onPressed: () =>
+                          // Navigator.push(context, MaterialPageRoute(builder: (context)=>MyDetail))
+                          Navigator.pushNamed(context, '/detail'),
                     ),
                   ),
                 ),
@@ -86,8 +83,8 @@ class _MyStatsState extends State<MyStats> {
                         "Total Cases",
                         style: TextStyle(
                             fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            fontFamily: 'Product Sans'),
+                            fontWeight: FontWeight.w800,
+                            ),
                       ),
                       trailing: Text(
                         data['data']['summary']['total'].toString(),
@@ -105,7 +102,7 @@ class _MyStatsState extends State<MyStats> {
                     title: Text(
                       "Indian Cases",
                       style:
-                          TextStyle(fontSize: 20, fontFamily: 'Product Sans'),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                     ),
                     trailing: Text(
                       data['data']['summary']['confirmedCasesIndian']
@@ -126,7 +123,7 @@ class _MyStatsState extends State<MyStats> {
                     title: Text(
                       "Foreign Cases",
                       style:
-                          TextStyle(fontSize: 20, fontFamily: 'Product Sans'),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                     ),
                     trailing: Text(
                       data['data']['summary']['confirmedCasesForeign']
@@ -147,7 +144,7 @@ class _MyStatsState extends State<MyStats> {
                     title: Text(
                       "Recovered",
                       style:
-                          TextStyle(fontSize: 20, fontFamily: 'Product Sans'),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                     ),
                     trailing: Text(
                       data['data']['summary']['discharged'].toString(),
@@ -167,7 +164,7 @@ class _MyStatsState extends State<MyStats> {
                     title: Text(
                       "Deaths",
                       style:
-                          TextStyle(fontSize: 20, fontFamily: 'Product Sans'),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                     ),
                     trailing: Text(
                       data['data']['summary']['deaths'].toString(),
@@ -175,7 +172,7 @@ class _MyStatsState extends State<MyStats> {
                           fontSize: 20,
                           color: Colors.redAccent,
                           fontWeight: FontWeight.w700,
-                          fontFamily: 'Product Sans'),
+                          ),
                     ),
                   ),
                 ),
@@ -187,7 +184,7 @@ class _MyStatsState extends State<MyStats> {
                     title: Text(
                       "Active Cases",
                       style:
-                          TextStyle(fontSize: 20, fontFamily: 'Product Sans'),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                     ),
                     trailing: Text(
                       " ${int.parse(data['data']['summary']['total'].toString()) - int.parse(data['data']['summary']['deaths'].toString()) - int.parse(data['data']['summary']['discharged'].toString())}",
@@ -195,7 +192,7 @@ class _MyStatsState extends State<MyStats> {
                           fontSize: 20,
                           color: Colors.orangeAccent,
                           fontWeight: FontWeight.w700,
-                          fontFamily: 'Product Sans'),
+                          ),
                     ),
                   ),
                 ),
@@ -210,13 +207,16 @@ class _MyStatsState extends State<MyStats> {
                         Text(
                           "List of Indian States",
                           style: TextStyle(
-                              fontSize: 18, fontFamily: 'Product Sans'),
+                              fontSize: 18, 
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600),
                         ),
                         SizedBox(
                           width: 10,
                         ),
                         Icon(
                           Icons.arrow_forward_ios,
+                          color: Colors.black,
                           size: 20,
                         )
                       ],
@@ -227,7 +227,7 @@ class _MyStatsState extends State<MyStats> {
                     ),
                     borderSide: BorderSide(
                       width: 2.0,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                 ),
@@ -236,20 +236,23 @@ class _MyStatsState extends State<MyStats> {
                   padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: RaisedButton(
                     color: Colors.white,
-                    textColor: Colors.blueAccent,
+                    textColor: Colors.black,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
                           "Global Statistics",
                           style: TextStyle(
-                              fontSize: 18, fontFamily: 'Product Sans'),
+                              fontSize: 18,
+                              color: Colors.black,
+                               fontWeight: FontWeight.w600),
                         ),
                         SizedBox(
                           width: 10,
                         ),
                         Icon(
                           Icons.arrow_forward_ios,
+                          color: Colors.black,
                           size: 20,
                         )
                       ],
@@ -263,8 +266,8 @@ class _MyStatsState extends State<MyStats> {
               ],
             ),
           ),
-        )
-      ],
+        ),
+      ),
     );
   }
 }
@@ -300,9 +303,6 @@ class _MyStatsGlobalState extends State<MyStatsGlobal> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          Container(
-            color: Colors.blueAccent,
-          ),
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(5, 20, 5, 18),
@@ -315,7 +315,7 @@ class _MyStatsGlobalState extends State<MyStatsGlobal> {
                       children: <Widget>[
                         Icon(
                           Icons.arrow_back_ios,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                         SizedBox(
                           width: 5,
@@ -323,10 +323,9 @@ class _MyStatsGlobalState extends State<MyStatsGlobal> {
                         Text(
                           "Go Back",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
-                            fontFamily: 'Product Sans',
                           ),
                         ),
                       ],
@@ -504,24 +503,15 @@ class _MyStatsScaffoldState extends State<MyStatsScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Container(
-            color: Colors.blueAccent,
-          ),
-          SafeArea(
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
-              child: MyStats(),
-            ),
-          ),
-        ],
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+          child: MyStats(),
+        ),
       ),
     );
   }
 }
-
-
 
 class MyLoadingScreen extends StatelessWidget {
   @override
