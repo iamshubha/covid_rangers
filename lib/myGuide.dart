@@ -12,8 +12,9 @@ class _MyGuideState extends State<MyGuide> {
     return SafeArea(
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.grey[300], 
-          ),
+            gradient: LinearGradient(
+                begin: Alignment.bottomCenter,
+                colors: [Colors.grey[700], Colors.grey[400], Colors.white])),
         child: Padding(
           padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
           child: ListView(

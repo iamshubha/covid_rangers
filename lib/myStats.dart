@@ -1,5 +1,5 @@
 import 'dart:convert';
-// import 'package:covid_19/main.dart';
+import 'package:gradient_widgets/gradient_widgets.dart';
 import 'package:corona_hack/myStatsDetails.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:http/http.dart' as http;
@@ -39,7 +39,16 @@ class _MyStatsState extends State<MyStats> {
       child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-              color: Colors.grey[300]),
+          
+              gradient: LinearGradient(
+                begin: Alignment.bottomCenter,
+                colors: [
+                  Colors.grey[700],
+                  Colors.grey[400],
+                  Colors.white
+                ]
+              )
+              ),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
             child: ListView(
@@ -65,16 +74,7 @@ class _MyStatsState extends State<MyStats> {
                         fontWeight: FontWeight.w800,
                       ),
                     ),
-                    // trailing: IconButton(
-                    //   icon: Icon(
-                    //     Octicons.graph,
-                    //     size: 35,
-                    //     color: Colors.white,
-                    //   ),
-                    //   onPressed: () =>
-                    //       // Navigator.push(context, MaterialPageRoute(builder: (context)=>MyDetail))
-                    //       Navigator.pushNamed(context, '/detail'),
-                    // ),
+
                   ),
                 ),
                 Card(

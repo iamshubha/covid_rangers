@@ -17,11 +17,12 @@ class _MyHelpState extends State<MyHelp> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        //color: Colors.grey[300],
         decoration: BoxDecoration(
-            color: Colors.grey[300], borderRadius: BorderRadius.circular(20)),
+            gradient: LinearGradient(
+                begin: Alignment.bottomCenter,
+                colors: [Colors.grey[700], Colors.grey[400], Colors.white])),
         child: Padding(
-          padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+          padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
           child: ListView(
             children: <Widget>[
               //Add list here
@@ -77,24 +78,27 @@ class _MyHelpState extends State<MyHelp> {
                     ),
               ),
               Padding(padding: EdgeInsets.all(5)),
-              
+
               Card(
                   margin: EdgeInsets.all(5),
                   child: Column(children: [
                     InkWell(
-                                          child: ListTile(
+                      child: ListTile(
                         leading: Icon(FontAwesome.shopping_cart),
                         title: Text(
                           "For your necessities ",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w800,
-                            ),
+                          ),
                         ),
                         trailing: Icon(Icons.arrow_forward_ios),
                       ),
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Necessities()));
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Necessities()));
                       },
                     )
                   ])),
@@ -123,28 +127,27 @@ class _MyHelpState extends State<MyHelp> {
                   },
                 ),
               ),
-              
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    style: TextStyle(
-                        color: Colors.black, fontFamily: 'Product Sans'),
-                    children: [
-                      TextSpan(text: "Designed and Developed by\t"),
-                      TextSpan(
-                        text: "\nShubha Banerjee & Shoili Chowdhury",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            
+
+              // Padding(
+              //   padding: EdgeInsets.all(10),
+              //   child: RichText(
+              //     textAlign: TextAlign.center,
+              //     text: TextSpan(
+              //       style: TextStyle(
+              //           color: Colors.black, fontFamily: 'Product Sans'),
+              //       children: [
+              //         TextSpan(text: "Designed and Developed by\t"),
+              //         TextSpan(
+              //           text: "\nShubha Banerjee & Shoili Chowdhury",
+              //           style: TextStyle(
+              //             color: Colors.black,
+              //             fontWeight: FontWeight.w500,
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),
@@ -290,7 +293,6 @@ class MoHW extends StatelessWidget {
           ),
         ],
       ),
-    
     );
   }
 }

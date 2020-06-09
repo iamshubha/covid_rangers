@@ -32,6 +32,7 @@ dependencies:
   
   webview_flutter: ^0.3.22+1
   cloud_firestore: ^0.13.6
+  gradient_widgets: 0.5.2
 
 
   # The following adds the Cupertino Icons font to your application.

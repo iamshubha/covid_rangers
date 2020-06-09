@@ -466,91 +466,88 @@ class QuesResult extends StatelessWidget {
             color: Colors.grey[400],
           ),
           SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      FlatButton(
-                        onPressed: () => Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => MyQuiz())),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-                            Icon(
-                              Icons.refresh,
-                              size: 26,
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              "Again",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      FlatButton(
-                        onPressed: () => Navigator.pop(context),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-                            Text(
-                              "Close",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'Product Sans',
-                              ),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Icon(
-                              Icons.close,
-                              color: Colors.white,
-                              size: 26,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.all(5),
-                      child: Column(
+            child: Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    FlatButton(
+                      onPressed: () => Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => MyQuiz())),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget>[
-                          _point >= 4
-                              ? _SuspectCard()
-                              : (_point >= 2 ? _IsolateCard() : _SafeCard()),
-                          Padding(padding: EdgeInsets.all(5)),
-                          Expanded(
-                            child: ListView(
-                              children: <Widget>[
-                                Padding(padding: EdgeInsets.all(3)),
-                                NearHospital(),
-                                Padding(padding: EdgeInsets.all(3)),
-                                AllMyTestCenters(),
-                                Padding(padding: EdgeInsets.all(3)),
-                                MoHW(),
-                                //Padding(padding: EdgeInsets.all(30))
-                              ],
+                          Icon(
+                            Icons.refresh,
+                            size: 26,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            "Again",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ],
                       ),
                     ),
+                    FlatButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: <Widget>[
+                          Text(
+                            "Close",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'Product Sans',
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Icon(
+                            Icons.close,
+                            color: Colors.white,
+                            size: 26,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Column(
+                      children: <Widget>[
+                        _point >= 4
+                            ? _SuspectCard()
+                            : (_point >= 2 ? _IsolateCard() : _SafeCard()),
+                        Padding(padding: EdgeInsets.all(5)),
+                        Expanded(
+                          child: ListView(
+                            children: <Widget>[
+                              Padding(padding: EdgeInsets.all(3)),
+                              NearHospital(),
+                              Padding(padding: EdgeInsets.all(3)),
+                              AllMyTestCenters(),
+                              Padding(padding: EdgeInsets.all(3)),
+                              MoHW(),
+                              //Padding(padding: EdgeInsets.all(30))
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],

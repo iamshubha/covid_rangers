@@ -43,28 +43,11 @@ class _SplashscreenState extends State<Splashscreen>
           color: Colors.white,
           child: FadeTransition(
               opacity: animation,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(
-                      "assets/corona.jpeg",
-                      height: 600,
-                      width: 400,
-                    ),
-                  ),
-                  Center(
-                    child: Text(
-                      "Covidpedia",
-                      style: TextStyle(
-                          color: Colors.black26,
-                          fontSize: 30,
-                          fontWeight: FontWeight.w800),
-                    ),
-                  ),
-                ],
+              child: Center(
+                child: Image.asset(
+                  "assets/logo.png",
+                  height: 900,
+                ),
               ))),
     );
   }
