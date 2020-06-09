@@ -65,16 +65,16 @@ class _MyStatsState extends State<MyStats> {
                         fontWeight: FontWeight.w800,
                       ),
                     ),
-                    trailing: IconButton(
-                      icon: Icon(
-                        Octicons.graph,
-                        size: 35,
-                        color: Colors.white,
-                      ),
-                      onPressed: () =>
-                          // Navigator.push(context, MaterialPageRoute(builder: (context)=>MyDetail))
-                          Navigator.pushNamed(context, '/detail'),
-                    ),
+                    // trailing: IconButton(
+                    //   icon: Icon(
+                    //     Octicons.graph,
+                    //     size: 35,
+                    //     color: Colors.white,
+                    //   ),
+                    //   onPressed: () =>
+                    //       // Navigator.push(context, MaterialPageRoute(builder: (context)=>MyDetail))
+                    //       Navigator.pushNamed(context, '/detail'),
+                    // ),
                   ),
                 ),
                 Card(
@@ -471,7 +471,7 @@ class _MyStatsGlobalState extends State<MyStatsGlobal> {
                 padding: const EdgeInsets.symmetric(
                     horizontal: 20, vertical: 15),
                 child: Text(
-                  "*The number of Confirmed cases, death, and recovered cases are based on the data provided by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE).",
+                  "The number of Confirmed cases, death, and recovered cases are based on the data provided by api-covid19-in.",
                   textAlign: TextAlign.justify,
                   style: TextStyle(
                     fontSize: 16,

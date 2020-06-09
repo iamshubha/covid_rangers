@@ -77,6 +77,27 @@ class _MyHelpState extends State<MyHelp> {
                     ),
               ),
               Padding(padding: EdgeInsets.all(5)),
+              
+              Card(
+                  margin: EdgeInsets.all(5),
+                  child: Column(children: [
+                    InkWell(
+                                          child: ListTile(
+                        leading: Icon(FontAwesome.shopping_cart),
+                        title: Text(
+                          "For your necessities ",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
+                            ),
+                        ),
+                        trailing: Icon(Icons.arrow_forward_ios),
+                      ),
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Necessities()));
+                      },
+                    )
+                  ])),
               Card(
                 margin: EdgeInsets.all(5),
                 child: ListTile(
@@ -102,26 +123,7 @@ class _MyHelpState extends State<MyHelp> {
                   },
                 ),
               ),
-              Card(
-                  margin: EdgeInsets.all(5),
-                  child: Column(children: [
-                    InkWell(
-                                          child: ListTile(
-                        leading: Icon(FontAwesome.shopping_cart),
-                        title: Text(
-                          "For your necessities: ",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w800,
-                            ),
-                        ),
-                        trailing: Icon(Icons.arrow_forward_ios),
-                      ),
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Necessities()));
-                      },
-                    )
-                  ])),
+              
               Padding(
                 padding: EdgeInsets.all(10),
                 child: RichText(
@@ -142,6 +144,7 @@ class _MyHelpState extends State<MyHelp> {
                   ),
                 ),
               ),
+            
             ],
           ),
         ),

@@ -12,9 +12,9 @@ class LandingScreen extends StatefulWidget {
 }
 
 class _LandingScreenState extends State<LandingScreen> {
-  int _currentIndex = 0;
+  int _currentIndex = 2;
   //static const TextStyle optionStyle =  TextStyle(fontSize: 16);
-  final tabs = [MyStats(), MyGuide(), MyAssesment(), MyNews(), MyHelp()];
+  final tabs = [ MyGuide(), MyAssesment(),MyStats(), MyNews(), MyHelp()];
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +37,7 @@ class _LandingScreenState extends State<LandingScreen> {
         type: BottomNavigationBarType.fixed,
         iconSize: 28,
         items: [
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesome.home),
-            title: Text('Home'),
-          ),
+          
           BottomNavigationBarItem(
             icon: Icon(Icons.dashboard),
             title: Text('Guides'),
@@ -48,6 +45,10 @@ class _LandingScreenState extends State<LandingScreen> {
           BottomNavigationBarItem(
            icon: Icon(FontAwesome.user_md, size: 30),
             title: Text('Test'),      
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesome.home),
+            title: Text('Home'),
           ),
           BottomNavigationBarItem(
             icon: Icon(FontAwesome.newspaper_o, size: 30),
