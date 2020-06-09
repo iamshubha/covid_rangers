@@ -78,7 +78,7 @@ class _MyAssesmentState extends State<MyAssesment> {
                       ),
                     ),
                   ),
-                  Padding(padding: EdgeInsets.all(10)),
+                  //Padding(padding: EdgeInsets.all(10)),
                   RaisedButton(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),
@@ -97,7 +97,6 @@ class _MyAssesmentState extends State<MyAssesment> {
                       ),
                     ),
                   ),
-                  Padding(padding: EdgeInsets.all(10))
                 ],
               ),
             )
