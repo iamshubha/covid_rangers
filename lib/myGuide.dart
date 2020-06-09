@@ -13,7 +13,7 @@ class _MyGuideState extends State<MyGuide> {
       child: Container(
         decoration: BoxDecoration(
           color: Colors.grey[300], 
-          borderRadius: BorderRadius.circular(20)),
+          ),
         child: Padding(
           padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
           child: ListView(

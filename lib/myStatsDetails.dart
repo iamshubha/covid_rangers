@@ -216,7 +216,7 @@ class _MyDetailGlobalState extends State<MyDetailGlobal> {
             ),
           ),
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+            icon: Icon(Icons.arrow_back, color: Colors.black),
             onPressed: () => Navigator.of(context).pop(),
           ),
         ),

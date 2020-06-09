@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:corona_hack/splash.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -118,14 +117,6 @@ class _MyHelpState extends State<MyHelp> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      // TextSpan(text: "\t&\t"),
-                      // TextSpan(
-                      //   text: "Sahil Pulikal",
-                      //   style: TextStyle(
-                      //     color: Colors.white,
-                      //     fontWeight: FontWeight.w500,
-                      //   ),
-                      // ),
                     ],
                   ),
                 ),
@@ -314,7 +305,7 @@ class _MoreHelplinesState extends State<MoreHelplines> {
   @override
   Widget build(BuildContext context) {
     if (data == null) {
-      return MyLoadingScreen(); //MyLoadingScreen();
+      return MyLoadingScreen(); 
     }
     return SafeArea(
           child: Scaffold(
@@ -355,7 +346,6 @@ class _MoreHelplinesState extends State<MoreHelplines> {
                       ? 0
                       : data['data']['contacts']['regional'].length,
                   itemBuilder: (BuildContext context, i) {
-                    //print(data['data']['contacts']['regional'][i].length);
                     return Padding(
                       padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                       child: Card(
