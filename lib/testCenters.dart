@@ -81,23 +81,6 @@ class _MyTestCentersState extends State<MyTestCenters> {
                       ],
                     ),
                   ),
-                  /*Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-                    child: ListTile(
-                      title: Text(
-                        "Test Centers",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                          fontWeight: FontWeight.w700,
-                          fontFamily: 'Product Sans',
-                        ),
-                      ),
-                    ),
-                  ),*/
-
-//                  Expanded(child: MyFireStore()),
                 ],
               ),
             ),
@@ -157,13 +140,10 @@ class _MyTestCentersState1 extends State<MyTestCenters> {
                           color: Colors.white,
                           fontSize: 40,
                           fontWeight: FontWeight.w700,
-                          fontFamily: 'Product Sans',
                         ),
                       ),
                     ),
                   ),
-
-//                  Expanded(child: MyFireStore()),
                 ],
               ),
             ),
