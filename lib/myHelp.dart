@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:corona_hack/necessities.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -104,15 +105,21 @@ class _MyHelpState extends State<MyHelp> {
               Card(
                   margin: EdgeInsets.all(5),
                   child: Column(children: [
-                    ListTile(
-                      leading: Icon(FontAwesome.shopping_cart),
-                      title: Text(
-                        "For your necessities: ",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w800,
-                          ),
+                    InkWell(
+                                          child: ListTile(
+                        leading: Icon(FontAwesome.shopping_cart),
+                        title: Text(
+                          "For your necessities: ",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
+                            ),
+                        ),
+                        trailing: Icon(Icons.arrow_forward_ios),
                       ),
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Necessities()));
+                      },
                     )
                   ])),
               Padding(
@@ -280,6 +287,7 @@ class MoHW extends StatelessWidget {
           ),
         ],
       ),
+    
     );
   }
 }
