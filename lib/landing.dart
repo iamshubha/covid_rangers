@@ -30,7 +30,7 @@ class _LandingScreenState extends State<LandingScreen> {
         ),
         centerTitle: true,
         elevation: 10,
-        backgroundColor: Colors.white, //TODO:color
+        backgroundColor: Colors.white,
       ),
       body: tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -38,7 +38,7 @@ class _LandingScreenState extends State<LandingScreen> {
         iconSize: 28,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(FontAwesome.home),
             title: Text('Home'),
           ),
           BottomNavigationBarItem(
@@ -54,7 +54,7 @@ class _LandingScreenState extends State<LandingScreen> {
             title: Text('News'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.help),
+            icon: Icon(FontAwesome.question),
             title: Text('Help'),
           ),
         ],

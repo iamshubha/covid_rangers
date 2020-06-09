@@ -64,7 +64,7 @@ class _MyHelpState extends State<MyHelp> {
                       "More helplines",
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                        fontSize: 16,
+                        fontSize: 18,
                       ),
                     ),
                     trailing: Icon(Icons.arrow_forward_ios),
@@ -86,8 +86,8 @@ class _MyHelpState extends State<MyHelp> {
                   title: Text(
                     "FAQs",
                     style: TextStyle(
-            fontWeight: FontWeight.w800,
-                      fontSize: 16,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 18,
                     ),
                   ),
                   trailing: Icon(Icons.arrow_forward_ios),
@@ -101,6 +101,20 @@ class _MyHelpState extends State<MyHelp> {
                   },
                 ),
               ),
+              Card(
+                  margin: EdgeInsets.all(5),
+                  child: Column(children: [
+                    ListTile(
+                      leading: Icon(FontAwesome.shopping_cart),
+                      title: Text(
+                        "For your necessities: ",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w800,
+                          ),
+                      ),
+                    )
+                  ])),
               Padding(
                 padding: EdgeInsets.all(10),
                 child: RichText(
@@ -141,9 +155,7 @@ class NearHospital extends StatelessWidget {
         ),
         title: Text(
           "Visit nearest Hospital",
-          style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w800),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
         ),
         trailing: Icon(Icons.arrow_forward_ios),
         onTap: () async {
@@ -190,16 +202,13 @@ class MoHW extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     "Call 1075",
-                    style: TextStyle(
-                        fontSize: 18,
-                    fontWeight: FontWeight.w800),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
                   ),
                 ],
               ),
-              subtitle: Text("Toll-free Number",
-              style: TextStyle(
-                    fontWeight: FontWeight.w800
-              ),
+              subtitle: Text(
+                "Toll-free Number",
+                style: TextStyle(fontWeight: FontWeight.w800),
               ),
               onTap: () async {
                 const call = 'tel:1075';
@@ -221,15 +230,13 @@ class MoHW extends StatelessWidget {
                 size: 30,
               ),
               title: Text("Helpline Number",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800
-                  )),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800)),
               subtitle: Text(
                 "+91-11-23978046",
                 style: TextStyle(
-                    fontWeight: FontWeight.w800,
-                    color: Colors.black,),
+                  fontWeight: FontWeight.w800,
+                  color: Colors.black,
+                ),
               ),
               onTap: () async {
                 const phoneNo = 'tel:+91-11-23978046';
@@ -251,9 +258,7 @@ class MoHW extends StatelessWidget {
                 size: 28,
               ),
               title: Text("Helpline Email ID",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800)),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800)),
               subtitle: Text(
                 "ncov2019@gov.in",
                 style: TextStyle(
@@ -305,13 +310,13 @@ class _MoreHelplinesState extends State<MoreHelplines> {
   @override
   Widget build(BuildContext context) {
     if (data == null) {
-      return MyLoadingScreen(); 
+      return MyLoadingScreen();
     }
     return SafeArea(
-          child: Scaffold(
+      child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-          color: Colors.grey[300], borderRadius: BorderRadius.circular(20)),
+              color: Colors.grey[300], borderRadius: BorderRadius.circular(20)),
           child: Column(
             children: <Widget>[
               Padding(
@@ -408,7 +413,7 @@ class AllMyTestCenters extends StatelessWidget {
           "Test Centers",
           style: TextStyle(
             fontWeight: FontWeight.w800,
-            fontSize: 16,
+            fontSize: 18,
           ),
         ),
         trailing: Icon(Icons.arrow_forward_ios),
