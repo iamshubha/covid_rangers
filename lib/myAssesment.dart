@@ -10,92 +10,100 @@ class MyAssesment extends StatefulWidget {
 class _MyAssesmentState extends State<MyAssesment> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Container(
-          color: Colors.blueAccent,
-        ),
-        SafeArea(
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(5, 20, 5, 18),
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 20),
-                  child: ListTile(
-                    title: Text(
-                      "Worried about COVID-19 ?",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 40,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Product Sans',
-                      ),
-                    ),
-                    subtitle: Text(
-                      "Take a Self-Assesment or go to a nearby Test Center",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'Product Sans',
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.all(5),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 20),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                elevation: 10.0,
+                child: Padding(
+                  padding: EdgeInsets.all(5.0),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      RaisedButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.0),
-                        ),
-                        elevation: 15,
-                        color: Colors.white,
-                        onPressed: () => Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => MyQuiz())),
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
+                    children: [
+                      ListTile(
+                        title: FittedBox(
                           child: Text(
-                            "Take Assesment",
+                            "Worried about COVID-19 ?",
                             style: TextStyle(
-                                color: Colors.blueAccent,
-                                fontSize: 18,
-                                fontFamily: 'Product Sans'),
+                              fontWeight: FontWeight.w800,
+                            ),
                           ),
                         ),
-                      ),
-                      Padding(padding: EdgeInsets.all(20)),
-                      RaisedButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.0),
-                        ),
-                        elevation: 15,
-                        color: Colors.white,
-                        onPressed: () =>
-                            Navigator.pushNamed(context, '/TestCenters'),
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
+                        subtitle: Padding(
+                          padding: const EdgeInsets.all(10.0),
                           child: Text(
-                            "Test Centers",
+                            "Take a Self-Assesment or go to a nearby Test Center",
                             style: TextStyle(
-                                color: Colors.blueAccent,
-                                fontSize: 18,
-                                fontFamily: 'Product Sans'),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
                         ),
+
                       ),
-                      Padding(padding: EdgeInsets.all(30))
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Image.asset("assets/image1.png", height: 200,),
+                      )
                     ],
                   ),
-                )
-              ],
+                ),
+              ),
             ),
-          ),
-        )
-      ],
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  RaisedButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    elevation: 5,
+                    color: Colors.white,
+                    onPressed: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MyQuiz())),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        "Take Assessment",
+                        style: TextStyle(
+                            fontSize: 18,
+                            ),
+                      ),
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.all(10)),
+                  RaisedButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    elevation: 5,
+                    color: Colors.white,
+                    onPressed: () =>
+                        Navigator.pushNamed(context, '/TestCenters'),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        "Test Centers",
+                        style: TextStyle(
+                            fontSize: 18,
+                            ),
+                      ),
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.all(10))
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
@@ -114,171 +122,165 @@ class _MyQuizState extends State<MyQuiz> {
       _point = 0;
     });
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Container(
-            color: Colors.blueAccent,
-          ),
-          SafeArea(
-            child: Padding(
-              padding: EdgeInsets.all(5),
-              child: Column(
-                //mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  FlatButton(
-                    onPressed: () => Navigator.pop(context),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(5),
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              FlatButton(
+                onPressed: () => Navigator.pop(context),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Icon(
+                      Icons.arrow_back_ios,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      "Go Back",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(20)),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.white,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 5),
+                          child: ListTile(
+                            title: Center(
+                              child: Text(
+                                "Self-Assessment",
+                                style: TextStyle(
+                                  fontSize: 35,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
+                            ),
+                            subtitle: Center(
+                              child: Text(
+                                "Check yourself",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          "Go Back",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'Product Sans',
+                        Card(
+                          margin: EdgeInsets.all(12),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5, left: 5, right: 5),
+                                  child: ListTile(
+                                    title: Text(
+                                      "\tDisclaimer!",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 25,
+                                          fontFamily: 'Product Sans'),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 5, bottom: 8, right: 5),
+                                  child: ListTile(
+                                    title: Text(
+                                      "The purpose of this self-assessment is to help you make decisions about seeking appropriate medical care. This system is not intended for the diagnosis or treatment of disease or other conditions, including COVID-19.\n\nThis system does not replace the judgment of healthcare professionals or the performance of any clinical assessment.\n\nTo provide information on the right level of care, we are going to ask you a series of questions.",
+                                      style: TextStyle(fontSize: 16),
+                                    ),
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 10, horizontal: 20),
+                                      child: RaisedButton(
+                                        color: Colors.blueAccent,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            Text(
+                                              "I don't Agree",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w800
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        onPressed: () => Navigator.pop(context),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 10, horizontal: 20),
+                                      child: RaisedButton(
+                                        color: Colors.blueAccent,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            Text(
+                                              "I Agree",
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w800,
+                                                  ),
+                                            ),
+                                            Padding(padding: EdgeInsets.all(2)),
+                                            Icon(
+                                              Icons.arrow_forward_ios,
+                                              color: Colors.white,
+                                              size: 18,
+                                            )
+                                          ],
+                                        ),
+                                        onPressed: () =>
+                                            Navigator.pushReplacementNamed(
+                                                context, '/ques1'),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 5),
-                            child: ListTile(
-                              title: Text(
-                                "Self-Assesment",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 35,
-                                  fontWeight: FontWeight.w500,
-                                  fontFamily: 'Product Sans',
-                                ),
-                              ),
-                              subtitle: Text(
-                                "Check yourself",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontFamily: 'Product Sans',
-                                ),
-                              ),
-                            ),
-                          ),
-                          Card(
-                            margin: EdgeInsets.all(10),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 5, left: 5, right: 5),
-                                    child: ListTile(
-                                      title: Text(
-                                        "\tDisclaimer!",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 25,
-                                            fontFamily: 'Product Sans'),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 5, bottom: 8, right: 5),
-                                    child: ListTile(
-                                      title: Text(
-                                        "The purpose of this self-assessment is to help you make decisions about seeking appropriate medical care. This system is not intended for the diagnosis or treatment of disease or other conditions, including COVID-19.\n\nThis system does not replace the judgment of healthcare professionals or the performance of any clinical assessment.\n\nTo provide information on the right level of care, we are going to ask you a series of questions.",
-                                        style: TextStyle(fontSize: 16),
-                                      ),
-                                    ),
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 10, horizontal: 20),
-                                        child: RaisedButton(
-                                          color: Colors.blueAccent,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: <Widget>[
-                                              Text(
-                                                "I don't Agree",
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontFamily: 'Product Sans'),
-                                              ),
-                                            ],
-                                          ),
-                                          onPressed: () =>
-                                              Navigator.pop(context),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 10, horizontal: 20),
-                                        child: RaisedButton(
-                                          color: Colors.blueAccent,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: <Widget>[
-                                              Text(
-                                                "I Agree",
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 16,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontFamily: 'Product Sans'),
-                                              ),
-                                              Padding(
-                                                  padding: EdgeInsets.all(2)),
-                                              Icon(
-                                                Icons.arrow_forward_ios,
-                                                color: Colors.white,
-                                                size: 18,
-                                              )
-                                            ],
-                                          ),
-                                          onPressed: () =>
-                                              Navigator.pushReplacementNamed(
-                                                  context, '/ques1'),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
-            ),
-          )
-        ],
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -289,35 +291,35 @@ class Ques1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return _QuesFormat(
         "Do you have any travel record to countries like United States of America, China or any European Country in the past 4 weeks?",
-        '/ques2');
+        '/ques2', 'assets/image2.png');
   }
 }
 
 class Ques2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return _QuesFormat("Have you been sick lately?", '/ques3');
+    return _QuesFormat("Have you been sick lately?", '/ques3', 'assets/image3.png');
   }
 }
 
 class Ques3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return _QuesFormat("Are you caring of someone who is ill?", '/ques4');
+    return _QuesFormat("Are you caring of someone who is ill?", '/ques4', 'assets/image8.jpg');
   }
 }
 
 class Ques4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return _QuesFormat("Do you have a heart disease or diabetes?", '/ques5');
+    return _QuesFormat("Do you have a heart disease or diabetes?", '/ques5', 'assets/image5.jpg');
   }
 }
 
 class Ques5 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return _QuesFormat("Do you have any respiratory illness?", '/ques6');
+    return _QuesFormat("Do you have any respiratory illness?", '/ques6', 'assets/image7.jpg');
   }
 }
 
@@ -326,7 +328,7 @@ class Ques6 extends StatelessWidget {
   Widget build(BuildContext context) {
     return _QuesFormat(
         "Do you have symptoms like dry cough, fever or difficulty in breathing?",
-        '/ques7');
+        '/ques7', 'assets/image9.jpg');
   }
 }
 
@@ -334,126 +336,122 @@ class Ques7 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _QuesFormat(
-        "Have you consulted a doctor in the past 2 weeks?", '/quesResult');
+        "Have you consulted a doctor in the past 2 weeks?", '/quesResult', 'assets/image6.jpg');
   }
 }
 
 class _QuesFormat extends StatelessWidget {
-  final String _str, _nav;
-  _QuesFormat(this._str, this._nav);
+  final String _str, _nav, _image;
+  _QuesFormat(this._str, this._nav, this._image);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Container(
-            color: Colors.blueAccent,
-          ),
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: <Widget>[
-                  FlatButton(
-                    onPressed: () => Navigator.pop(context),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Text(
-                          "Close",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'Product Sans',
-                          ),
+      body: SafeArea(
+        child: Container(
+          decoration: BoxDecoration(color: Colors.grey[400]),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: <Widget>[
+                FlatButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      Text(
+                        "Close",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w800,
                         ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Icon(
-                          Icons.close,
-                          color: Colors.white,
-                        ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Icon(
+                        Icons.close,
+                      ),
+                    ],
                   ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Card(
-                          margin: EdgeInsets.all(20),
-                          child: Padding(
-                            padding: EdgeInsets.all(20),
-                            child: Column(
-                              children: <Widget>[
-                                Column(
-                                  children: <Widget>[
-                                    ListTile(
-                                      title: Text(
-                                        _str,
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          fontFamily: 'Product Sans',
-                                        ),
+                ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Card(
+                        margin: EdgeInsets.all(20),
+                        child: Padding(
+                          padding: EdgeInsets.all(20),
+                          child: Column(
+                            children: <Widget>[
+                              Column(
+                                children: <Widget>[
+                                  Image.asset("$_image",
+                                  height: 200,
+                                  ),
+                                  ListTile(
+                                    title: Text(
+                                      _str,
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontFamily: 'Product Sans',
                                       ),
                                     ),
-                                    Padding(padding: EdgeInsets.all(10)),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: <Widget>[
-                                        RaisedButton(
-                                          onPressed: () {
-                                            Navigator.pushReplacementNamed(
-                                                context, _nav);
-                                            print(_point);
-                                          },
-                                          child: Text(
-                                            "No",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 16,
-                                                fontFamily: 'Product Sans'),
-                                          ),
-                                          color: Colors.blueAccent,
+                                  ),
+                                  Padding(padding: EdgeInsets.all(10)),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: <Widget>[
+                                      RaisedButton(
+                                        onPressed: () {
+                                          Navigator.pushReplacementNamed(
+                                              context, _nav);
+                                          print(_point);
+                                        },
+                                        child: Text(
+                                          "No",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16,
+                                              fontFamily: 'Product Sans'),
                                         ),
-                                        SizedBox(
-                                          width: 20,
+                                        color: Colors.blueAccent,
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      RaisedButton(
+                                        onPressed: () {
+                                          ++_point;
+                                          Navigator.pushReplacementNamed(
+                                              context, _nav);
+                                          print(_point);
+                                        },
+                                        child: Text(
+                                          "Yes",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16,
+                                              ),
                                         ),
-                                        RaisedButton(
-                                          onPressed: () {
-                                            ++_point;
-                                            Navigator.pushReplacementNamed(
-                                                context, _nav);
-                                            print(_point);
-                                          },
-                                          child: Text(
-                                            "Yes",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 16,
-                                                fontFamily: 'Product Sans'),
-                                          ),
-                                          color: Colors.blueAccent,
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              ],
-                            ),
+                                        color: Colors.blueAccent,
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          )
-        ],
+          ),
+        ),
       ),
     );
   }
@@ -466,7 +464,7 @@ class QuesResult extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Container(
-            color: Colors.blueAccent,
+            color: Colors.grey[400],
           ),
           SafeArea(
             child: Padding(
@@ -484,7 +482,6 @@ class QuesResult extends StatelessWidget {
                           children: <Widget>[
                             Icon(
                               Icons.refresh,
-                              color: Colors.white,
                               size: 26,
                             ),
                             SizedBox(
@@ -493,10 +490,8 @@ class QuesResult extends StatelessWidget {
                             Text(
                               "Again",
                               style: TextStyle(
-                                color: Colors.white,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600,
-                                fontFamily: 'Product Sans',
                               ),
                             ),
                           ],
