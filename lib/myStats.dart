@@ -41,7 +41,7 @@ class _MyStatsState extends State<MyStats> {
           decoration: BoxDecoration(
               color: Colors.grey[300]),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(5, 0, 5, 10),
+            padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
             child: ListView(
               children: <Widget>[
                 //Add list here
