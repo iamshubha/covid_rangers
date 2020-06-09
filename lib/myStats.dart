@@ -37,7 +37,7 @@ class _MyStatsState extends State<MyStats> {
       child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-              color: Colors.grey[300], borderRadius: BorderRadius.circular(20)),
+              color: Colors.grey[300]),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(5, 0, 5, 10),
             child: ListView(
@@ -518,21 +518,20 @@ class MyLoadingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        // color: Colors.blueAccent,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
               ),
               Text(
                 "\nLoading...",
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 18,
-                    fontFamily: 'Product Sans'),
+                    ),
               ),
             ],
           ),

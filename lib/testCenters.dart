@@ -48,28 +48,25 @@ class _MyTestCentersState extends State<MyTestCenters> {
                 initialUrl: 'https://covid.bhaarat.ai/testingcentres',
               )),
           Container(
-//            color: Colors.blueAccent,
             height: 75,
             decoration: BoxDecoration(
-                color: Colors.blueAccent,
+              color: Colors.white,
                 shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(15.0),
-                    bottomRight: Radius.circular(15.0))),
+                ),
           ),
           SafeArea(
             child: Padding(
               padding: EdgeInsets.all(5),
               child: Column(
                 children: <Widget>[
-                  FlatButton(
+                  MaterialButton(
                     onPressed: () => Navigator.pop(context),
+                    elevation: 10,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Icon(
                           Icons.arrow_back_ios,
-                          color: Colors.white,
                         ),
                         SizedBox(
                           width: 5,
@@ -77,10 +74,8 @@ class _MyTestCentersState extends State<MyTestCenters> {
                         Text(
                           "Test Centers",
                           style: TextStyle(
-                            color: Colors.white,
                             fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'Product Sans',
+                            fontWeight: FontWeight.w800,
                           ),
                         ),
                       ],
