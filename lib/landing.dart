@@ -19,7 +19,7 @@ class _LandingScreenState extends State<LandingScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Covidpedia",
+          "Coronapedia",
           style: TextStyle(
               color: Colors.black, fontSize: 24, fontWeight: FontWeight.w800),
         ),
