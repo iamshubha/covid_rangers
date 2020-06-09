@@ -13,131 +13,125 @@ class MyHelp extends StatefulWidget {
 class _MyHelpState extends State<MyHelp> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Container(
-          color: Colors.blueAccent,
-        ),
-        SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(5, 20, 5, 18),
-            child: ListView(
-              children: <Widget>[
-                //Add list here
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 20),
-                  child: ListTile(
-                    title: Text(
-                      "Need Help ?",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 40,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Product Sans',
-                      ),
+    return SafeArea(
+      child: Container(
+        //color: Colors.grey[300],
+        decoration: BoxDecoration(
+            color: Colors.grey[300], borderRadius: BorderRadius.circular(20)),
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+          child: ListView(
+            children: <Widget>[
+              //Add list here
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 20),
+                child: ListTile(
+                  title: Text(
+                    "Need Help ?",
+                    style: TextStyle(
+                      color: Colors.blueGrey[900],
+                      fontSize: 40,
+                      fontWeight: FontWeight.w700,
                     ),
-                    subtitle: Text(
-                      "Helplines...",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Product Sans',
-                      ),
+                  ),
+                  subtitle: Text(
+                    "We are here for you",
+                    style: TextStyle(
+                      color: Colors.blueGrey[600],
+                      fontSize: 26,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.all(5)),
-                NearHospital(),
-                Padding(padding: EdgeInsets.all(5)),
-                MoHW(),
-                Padding(padding: EdgeInsets.all(5)),
-                AllMyTestCenters(),
-                Padding(padding: EdgeInsets.all(5)),
-                Card(
-                  margin: EdgeInsets.all(5),
-                  child: ListTile(
-                      leading: Icon(
-                        Icons.more_vert,
-                        size: 30,
-                      ),
-                      title: Text(
-                        "More helplines",
-                        style: TextStyle(
-//            fontWeight: FontWeight.w600,
-                          fontSize: 16,
-                          fontFamily: 'Product Sans',
-                        ),
-                      ),
-                      trailing: Icon(Icons.arrow_forward_ios),
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => MoreHelplines()))
-                      // Navigator.pushNamed(context, '/MoreHelplines'),
-                      ),
-                ),
-                Padding(padding: EdgeInsets.all(5)),
-                Card(
-                  margin: EdgeInsets.all(5),
-                  child: ListTile(
+              ),
+              Padding(padding: EdgeInsets.all(5)),
+              NearHospital(),
+              Padding(padding: EdgeInsets.all(5)),
+              MoHW(),
+              Padding(padding: EdgeInsets.all(5)),
+              AllMyTestCenters(),
+              Padding(padding: EdgeInsets.all(5)),
+              Card(
+                margin: EdgeInsets.all(5),
+                child: ListTile(
                     leading: Icon(
-                      Icons.help_outline,
+                      Icons.more_vert,
                       size: 30,
                     ),
                     title: Text(
-                      "FAQs",
+                      "More helplines",
                       style: TextStyle(
-//            fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w800,
                         fontSize: 16,
-                        fontFamily: 'Product Sans',
                       ),
                     ),
                     trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: () async {
-                      const url = 'https://www.mohfw.gov.in/pdf/FAQ.pdf';
-                      if (await canLaunch(url)) {
-                        await launch(url);
-                      } else {
-                        throw 'Could not launch $url';
-                      }
-                    },
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MoreHelplines()))
+                    // Navigator.pushNamed(context, '/MoreHelplines'),
+                    ),
+              ),
+              Padding(padding: EdgeInsets.all(5)),
+              Card(
+                margin: EdgeInsets.all(5),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.help_outline,
+                    size: 30,
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      style: TextStyle(
-                          color: Colors.white, fontFamily: 'Product Sans'),
-                      children: [
-                        TextSpan(text: "Designed and Developed by\t"),
-                        TextSpan(
-                          text: "\nShubha Banerjee & Shoili Chowdhury",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        // TextSpan(text: "\t&\t"),
-                        // TextSpan(
-                        //   text: "Sahil Pulikal",
-                        //   style: TextStyle(
-                        //     color: Colors.white,
-                        //     fontWeight: FontWeight.w500,
-                        //   ),
-                        // ),
-                      ],
+                  title: Text(
+                    "FAQs",
+                    style: TextStyle(
+            fontWeight: FontWeight.w800,
+                      fontSize: 16,
                     ),
                   ),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                  onTap: () async {
+                    const url = 'https://www.mohfw.gov.in/pdf/FAQ.pdf';
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
                 ),
-              ],
-            ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    style: TextStyle(
+                        color: Colors.white, fontFamily: 'Product Sans'),
+                    children: [
+                      TextSpan(text: "Designed and Developed by\t"),
+                      TextSpan(
+                        text: "\nShubha Banerjee & Shoili Chowdhury",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      // TextSpan(text: "\t&\t"),
+                      // TextSpan(
+                      //   text: "Sahil Pulikal",
+                      //   style: TextStyle(
+                      //     color: Colors.white,
+                      //     fontWeight: FontWeight.w500,
+                      //   ),
+                      // ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
-        )
-      ],
+        ),
+      ),
     );
   }
 }
@@ -154,7 +148,9 @@ class NearHospital extends StatelessWidget {
         ),
         title: Text(
           "Visit nearest Hospital",
-          style: TextStyle(fontFamily: 'Product Sans', fontSize: 16),
+          style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w800),
         ),
         trailing: Icon(Icons.arrow_forward_ios),
         onTap: () async {
@@ -183,15 +179,15 @@ class MoHW extends StatelessWidget {
             title: Text(
               "Ministry of Health & Family Welfare",
               style: TextStyle(
-                fontSize: 19,
-                fontWeight: FontWeight.w500,
-                fontFamily: 'Product Sans',
+                fontSize: 20,
+                fontWeight: FontWeight.w800,
               ),
               textAlign: TextAlign.center,
             ),
           ),
           Card(
-            margin: EdgeInsets.all(5),
+            margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+            elevation: 3,
             child: ListTile(
               leading: Icon(
                 Entypo.old_phone,
@@ -200,18 +196,18 @@ class MoHW extends StatelessWidget {
               title: Row(
                 children: <Widget>[
                   Text(
-                    "Call ",
-                    style: TextStyle(fontFamily: 'Product Sans'),
-                  ),
-                  Text(
-                    "1075",
+                    "Call 1075",
                     style: TextStyle(
-                        fontWeight: FontWeight.w800,
-                        fontFamily: 'Product Sans'),
+                        fontSize: 18,
+                    fontWeight: FontWeight.w800),
                   ),
                 ],
               ),
-              subtitle: Text("Toll-free Number"),
+              subtitle: Text("Toll-free Number",
+              style: TextStyle(
+                    fontWeight: FontWeight.w800
+              ),
+              ),
               onTap: () async {
                 const call = 'tel:1075';
                 if (await canLaunch(call)) {
@@ -224,20 +220,23 @@ class MoHW extends StatelessWidget {
             ),
           ),
           Card(
-            margin: EdgeInsets.all(5),
+            margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+            elevation: 3,
             child: ListTile(
               leading: Icon(
                 Ionicons.ios_call,
                 size: 30,
               ),
               title: Text("Helpline Number",
-                  style: TextStyle(fontFamily: 'Product Sans')),
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800
+                  )),
               subtitle: Text(
                 "+91-11-23978046",
                 style: TextStyle(
                     fontWeight: FontWeight.w800,
-                    color: Colors.black,
-                    fontFamily: 'Product Sans'),
+                    color: Colors.black,),
               ),
               onTap: () async {
                 const phoneNo = 'tel:+91-11-23978046';
@@ -251,14 +250,17 @@ class MoHW extends StatelessWidget {
             ),
           ),
           Card(
-            margin: EdgeInsets.all(5),
+            margin: EdgeInsets.fromLTRB(10, 5, 10, 10),
+            elevation: 3,
             child: ListTile(
               leading: Icon(
                 Entypo.mail,
                 size: 28,
               ),
               title: Text("Helpline Email ID",
-                  style: TextStyle(fontFamily: 'Product Sans')),
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800)),
               subtitle: Text(
                 "ncov2019@gov.in",
                 style: TextStyle(
@@ -369,7 +371,6 @@ class _MoreHelplinesState extends State<MoreHelplines> {
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 16,
-                              fontFamily: 'Product Sans',
                             ),
                           ),
                           subtitle: Text(
@@ -377,7 +378,6 @@ class _MoreHelplinesState extends State<MoreHelplines> {
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 16,
-                              fontFamily: 'Product Sans',
                             ),
                           ),
                           onTap: () async {
@@ -416,9 +416,8 @@ class AllMyTestCenters extends StatelessWidget {
         title: Text(
           "Test Centers",
           style: TextStyle(
-//            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w800,
             fontSize: 16,
-            fontFamily: 'Product Sans',
           ),
         ),
         trailing: Icon(Icons.arrow_forward_ios),
