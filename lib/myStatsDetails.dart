@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:http/http.dart' as http;
@@ -257,7 +256,7 @@ class _MyDetailGlobalState extends State<MyDetailGlobal> {
       body: Stack(
         children: <Widget>[
           Container(
-            color: Colors.blueAccent,
+            color: Colors.white38,
           ),
           SafeArea(
             child: Column(
@@ -271,7 +270,7 @@ class _MyDetailGlobalState extends State<MyDetailGlobal> {
                       children: <Widget>[
                         Icon(
                           Icons.arrow_back_ios,
-                          color: Colors.white,
+                          color: Colors.black54,
                         ),
                         SizedBox(
                           width: 5,
@@ -279,7 +278,7 @@ class _MyDetailGlobalState extends State<MyDetailGlobal> {
                         Text(
                           "Go Back",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                             fontFamily: 'Product Sans',

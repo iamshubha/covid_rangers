@@ -29,6 +29,9 @@ dependencies:
   shared_preferences: 
   flutter_vector_icons: ^0.2.1
   cached_network_image: ^2.2.0+1
+  
+  webview_flutter: ^0.3.22+1
+  cloud_firestore: ^0.13.6
 
 
   # The following adds the Cupertino Icons font to your application.

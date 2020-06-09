@@ -41,6 +41,7 @@ android {
         applicationId "com.example.corona_hack"
         minSdkVersion 16
         targetSdkVersion 28
+        multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }

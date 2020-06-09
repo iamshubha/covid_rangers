@@ -338,7 +338,7 @@ class _MyStatsGlobalState extends State<MyStatsGlobal> {
                       title: Text(
                         "COVID-19",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 40,
                           fontWeight: FontWeight.w700,
                           fontFamily: 'Product Sans',
@@ -347,7 +347,7 @@ class _MyStatsGlobalState extends State<MyStatsGlobal> {
                       subtitle: Text(
                         "Global Statistics*",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black45,
                           fontSize: 28,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'Product Sans',
@@ -357,7 +357,7 @@ class _MyStatsGlobalState extends State<MyStatsGlobal> {
                         icon: Icon(
                           Ionicons.md_globe,
                           size: 40,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                         onPressed: () {},
                       ),
@@ -480,7 +480,7 @@ class _MyStatsGlobalState extends State<MyStatsGlobal> {
                       textAlign: TextAlign.justify,
                       style: TextStyle(
                         fontSize: 16,
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                     ),
                   )
@@ -518,7 +518,7 @@ class MyLoadingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.blueAccent,
+        // color: Colors.blueAccent,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

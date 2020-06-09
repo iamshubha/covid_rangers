@@ -106,13 +106,13 @@ class _MyHelpState extends State<MyHelp> {
                   textAlign: TextAlign.center,
                   text: TextSpan(
                     style: TextStyle(
-                        color: Colors.white, fontFamily: 'Product Sans'),
+                        color: Colors.black, fontFamily: 'Product Sans'),
                     children: [
                       TextSpan(text: "Designed and Developed by\t"),
                       TextSpan(
                         text: "\nShubha Banerjee & Shoili Chowdhury",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontWeight: FontWeight.w500,
                         ),
                       ),

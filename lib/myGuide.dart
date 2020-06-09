@@ -75,12 +75,12 @@ class _MyGuideState extends State<MyGuide> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              "• Dry Cough",
+                              "• Fever",
                               style: TextStyle(
                                   fontSize: 18, fontWeight: FontWeight.w500),
                             ),
                             Text(
-                              "• High Fever",
+                              "• Dry Cough",
                               style: TextStyle(
                                   fontSize: 18, fontWeight: FontWeight.w500),
                             ),
@@ -91,6 +91,11 @@ class _MyGuideState extends State<MyGuide> {
                             ),
                             Text(
                               "• Difficulty in Breathing",
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w500),
+                            ),
+                            Text(
+                              "• Tiredness",
                               style: TextStyle(
                                   fontSize: 18, fontWeight: FontWeight.w500),
                             ),
